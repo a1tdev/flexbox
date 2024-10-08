@@ -1,0 +1,867 @@
+/* ========================================================================
+   CSS RESET  
+   ======================================================================== */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/*converts 1 rem to the equivalent 10px*/
+html {
+  font-size: 62.5%;
+}
+
+/* Line breaks */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+  max-width: 75ch;
+}
+
+/* ========================================================================
+   ROOT CONFIGURATION  
+   ======================================================================== */
+:root {
+  --clr-primary: rgb(19, 19, 43, 1);
+  --clr-secondary: rgb(2, 247, 170);
+  --clr-tertiary: rgb(26, 145, 245, 1);
+  --clr-neutral-100: rgb(250, 250, 250);
+
+  --ff-heading: "Inter", serif;
+  --ff-body: "Inter", sans-serif;
+  --ff-nav: "Inter", sans-serif;
+
+  --fw-heading: 600;
+  --fw-body: 200;
+  --fw-nav: 500;
+  --fw-btn: 400;
+
+  --fs-h1: 3.5rem;
+  --fs-h2: 3.8rem;
+  --fs-h3: 3rem;
+  --fs-h4: 3rem;
+  --fs-h5: 2.8rem;
+  --fs-body-200: 1.5rem;
+  --fs-body-300: 1.6rem;
+  --fs-body-400: 1.8rem;
+  --fs-body-500: 2.25rem;
+  --fs-body-600: 2.5rem;
+  --fs-body-700: 3rem;
+  --fs-nav: 1.9rem;
+
+  --primary-font-clr: var(--clr-neutral-100);
+  --secondary-font-clr: var(--clr-primary);
+  --tertiary-font-clr: var(--clr-secondary);
+}
+
+@media (min-width: 24.06em) {
+  :root {
+    --fs-h1: 4rem;
+  }
+}
+
+@media (min-width: 40.06em) {
+  :root {
+    --fs-h1: 6.2rem;
+    --fs-h2: 4.8rem;
+    --fs-h3: 3.2rem;
+  }
+}
+@media (min-width: 70.31em) {
+  :root {
+    --fs-h1: 6.8rem;
+    --fs-h2: 4.8rem;
+    --fs-h3: 3.2rem;
+    --fs-nav: 2rem;
+  }
+}
+
+/* ========================================================================
+   MAIN TEXT STYLES 
+   ======================================================================== */
+
+* {
+  font-family: var(--ff-body);
+  font-weight: var(--fw-body);
+  font-size: var(--fs-body-400);
+  color: var(--primary-font-clr);
+  text-decoration: none;
+  list-style: none;
+}
+body {
+  background-color: var(--clr-primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ff-heading);
+  font-weight: var(--fw-heading);
+  color: var(--primary-font-clr);
+}
+h1 {
+  font-size: var(--fs-h1);
+  text-align: center;
+}
+h2 {
+  font-size: var(--fs-h2);
+  text-align: left;
+}
+.intro-container > h2 {
+  text-align: center;
+}
+h3 {
+  font-size: var(--fs-h3);
+}
+h4 {
+  font-size: var(--fs-h4);
+}
+.highlight {
+  font-family: var(--ff-heading);
+  font-weight: var(--fw-heading);
+  color: var(--secondary-font-clr);
+
+  background-color: var(--clr-secondary);
+  border-radius: 15px;
+  padding: 0rem 0.6rem;
+  white-space: wrap;
+}
+h1 > span.highlight {
+  font-size: var(--fs-h1);
+}
+h2 > span.highlight {
+  font-size: var(--fs-h2);
+}
+
+.property-style {
+  width: 100%;
+  padding: 1rem 0;
+}
+@media screen and (min-width: 30em) {
+  .property-style {
+    width: unset;
+  }
+}
+
+/* ========================================================================
+   LINK/BTN STYLES   
+   ======================================================================== */
+
+/* Link Effect */
+.link-animation {
+  position: relative;
+}
+
+.link-animation::before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--clr-secondary);
+  transition: width 0.3s;
+}
+.link-animation:hover::before {
+  width: 100%;
+}
+
+/* ========================================================================
+   PAGE & SPACING (UTILITY) STYLES  
+   ======================================================================== */
+
+.page-container {
+  --max-width: 1000px;
+  --padding: 2rem;
+  width: min(var(--max-width), 100% - (var(--padding) * 2));
+  margin-inline: auto;
+}
+
+@media (min-width: 46em) {
+  .page-container {
+    width: min(var(--max-width), 100% - (var(--padding) * 4));
+  }
+}
+
+@media (min-width: 64em) {
+  .page-container {
+    width: min(var(--max-width), 100% - (var(--padding) * 5));
+  }
+}
+@media (min-width: 80.31em) {
+  .page-container {
+    width: min(var(--max-width), 100% - (var(--padding) * 6));
+  }
+}
+
+/* Padding */
+.pt-4 {
+  padding-top: 4rem;
+}
+.pt-12 {
+  padding-top: 12rem;
+}
+
+.ptb-4 {
+  padding: 4rem 0;
+}
+
+.ptb-12 {
+  padding: 12rem 0;
+}
+.ptb-24 {
+  padding: 24rem 0;
+}
+.pb-12 {
+  padding-bottom: 12rem;
+}
+.pt-8 {
+  padding-top: 8rem;
+}
+.pb-3 {
+  padding-bottom: 3rem;
+}
+.mt-10 {
+  margin-top: 10rem;
+}
+
+/* ========================================================================
+   NAV / HEADER STYLES   
+   ======================================================================== */
+.nav-logo-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 3rem 0;
+  gap: 3rem;
+}
+
+.nav-list {
+  display: flex;
+  gap: 5rem;
+  justify-content: space-evenly;
+}
+.nav-list a {
+  font-size: var(--fs-nav);
+  font-weight: var(--fw-nav);
+  color: var(--primary-font-clr);
+}
+
+/* =========================================================
+   MEDIA QUERIES - NAV / HEADER STYLES
+   ========================================================= */
+
+@media screen and (min-width: 47em) {
+  .nav-logo-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 3rem 0;
+  }
+}
+
+/* ========================================================================
+   HOME PAGE STYLES  
+   ======================================================================== */
+
+.flex-pattern {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.flex-pattern > div {
+  width: 120px;
+  height: 60px;
+  border: 1px solid var(--clr-secondary);
+  border-radius: 15px;
+  flex: 1 0 120px;
+}
+
+.intro-container,
+.intro-container > p {
+  text-align: center;
+  margin: 0 auto;
+}
+.flex-container {
+  border: 1px solid var(--clr-secondary);
+  border-radius: 5px;
+  padding: 0.5rem;
+  height: 350px;
+  display: flex;
+  width: 100%;
+  transition: width 0.3s;
+}
+
+.flex-item-1,
+.flex-item-2,
+.flex-item-3,
+.flex-item-4,
+.flex-item-shrink {
+  border-radius: 5px;
+  background-image: linear-gradient(
+    to right,
+    var(--clr-secondary),
+    var(--clr-tertiary)
+  );
+  padding: 1rem;
+  width: 45px;
+  height: fit-content;
+  color: var(--secondary-font-clr);
+  font-weight: var(--fw-nav);
+  font-size: var(--fs-body-300);
+  text-align: center;
+  margin: 0.5rem;
+}
+
+.flex-item-1 {
+  order: 1;
+}
+.flex-item-2 {
+  order: 2;
+}
+.flex-item-3 {
+  order: 3;
+}
+.flex-item-4 {
+  order: 4;
+}
+
+/* align content item width*/
+.ac-width {
+  width: 45%;
+  height: unset;
+}
+
+.container-border {
+  border: 1px solid var(--clr-secondary);
+  border-radius: 5px;
+  padding: 2rem;
+}
+select {
+  color: var(--secondary-font-clr);
+  font-weight: var(--fw-btn);
+  padding: 0.5rem;
+  background-color: var(--clr-secondary);
+}
+
+/* Property Container */
+.property-container {
+  padding-top: 2rem;
+}
+@media screen and (min-width: 23em) {
+  .property-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 3 1 0%;
+    gap: 2rem;
+  }
+}
+@media screen and (min-width: 30em) {
+  .property-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 3 1 0%;
+    gap: 2rem;
+  }
+}
+@media screen and (min-width: 47em) {
+  .property-container {
+    padding-top: 2.5rem;
+  }
+}
+
+/* ========================================================================
+   FLEX JS STYLES  
+   ======================================================================== */
+
+/* DISPLAY */
+.display-flex {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.flexjs-display-block {
+  display: block;
+}
+.flexjs-display-flex {
+  display: flex;
+  gap: 0.5rem;
+}
+.flexjs-display-inline-flex {
+  display: inline-flex;
+}
+
+/* FLEX-DIRECTION */
+.flexjs-row {
+  flex-direction: row;
+}
+.flexjs-row-reverse {
+  flex-direction: row-reverse;
+}
+.flexjs-column {
+  flex-direction: column;
+}
+.flexjs-column-reverse {
+  flex-direction: column-reverse;
+}
+
+/* FLEX-WRAP */
+
+.flexjs-nowrap {
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+.flexjs-wrap {
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.flexjs-wrap-reverse {
+  flex-wrap: wrap-reverse;
+  flex-direction: row;
+}
+
+/* FLEX-FLOW */
+.flexjs-row-nowrap {
+  flex-flow: row nowrap;
+}
+.flexjs-row-wrap {
+  flex-flow: row wrap;
+}
+.flexjs-row-wrap-reverse {
+  flex-flow: row wrap-reverse;
+}
+.flexjs-column-nowrap {
+  flex-flow: column nowrap;
+}
+.flexjs-column-wrap {
+  flex-flow: column wrap;
+}
+.flexjs-column-wrap-reverse {
+  flex-flow: column wrap-reverse;
+}
+
+/* JUSTIFY-CONTENT */
+.flexjs-flex-start {
+  justify-content: flex-start;
+}
+.flexjs-flex-end {
+  justify-content: flex-end;
+}
+.flexjs-center {
+  justify-content: center;
+}
+.flexjs-space-between {
+  justify-content: space-between;
+}
+.flexjs-space-around {
+  justify-content: space-around;
+}
+.flexjs-space-evenly {
+  justify-content: space-evenly;
+}
+
+/* ALIGN-ITEMS */
+.flexjs-stretch,
+.flexjs-flex-start,
+.flexjs-flex-end,
+.flexjs-center,
+.flexjs-baseline {
+  flex-direction: row;
+}
+.flexjs-ai-stretch {
+  align-items: stretch;
+}
+.flexjs-ai-flex-start {
+  align-items: flex-start;
+}
+.flexjs-ai-flex-end {
+  align-items: flex-end;
+}
+.flexjs-ai-center {
+  align-items: center;
+}
+.flexjs-ai-baseline {
+  align-items: baseline;
+}
+
+/* ALIGN-CONTENT */
+.flex-container[data-id="container-align-content"] {
+  flex-wrap: wrap;
+}
+.flexjs-ac-stretch {
+  align-content: stretch;
+}
+.flexjs-ac-flex-start {
+  align-content: flex-start;
+}
+.flexjs-ac-flex-end {
+  align-content: flex-end;
+}
+.flexjs-ac-center {
+  align-content: center;
+}
+.flexjs-ac-space-between {
+  align-content: space-between;
+}
+.flexjs-ac-space-around {
+  align-content: space-around;
+}
+
+/* GAP */
+.flexjs-gap-0 {
+  gap: 0;
+}
+.flexjs-gap-1 {
+  gap: 0.5rem;
+}
+.flexjs-gap-2 {
+  gap: 1rem;
+}
+.flexjs-gap-3 {
+  gap: 1.5rem;
+}
+.flexjs-gap-4 {
+  gap: 2rem;
+}
+
+/* ORDER */
+.flexjs-order-1 {
+  order: 1;
+}
+.flexjs-order-2 {
+  order: 2;
+}
+.flexjs-order-3 {
+  order: 3;
+}
+.flexjs-order-4 {
+  order: 4;
+}
+.flexjs-order-5 {
+  order: 5;
+}
+
+/* FLEX-GROW */
+.flexjs-grow-0 {
+  flex-wrap: wrap;
+  flex-grow: 0;
+}
+.flexjs-grow-1 {
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+.flexjs-grow-2 {
+  flex-wrap: wrap;
+  flex-grow: 2;
+}
+.flexjs-grow-3 {
+  flex-wrap: wrap;
+  flex-grow: 3;
+}
+
+/* FLEX-SHRINK */
+.flex-container[data-id="container-flex-shrink"] > .flex-item-2 {
+  width: 100%;
+}
+.flex-container[data-id="container-flex-shrink"] > .flex-item-shrink {
+  width: 250px;
+}
+
+.flexjs-shrink-1 {
+  flex-wrap: wrap;
+  flex-shrink: 1;
+}
+.flexjs-shrink-2 {
+  flex-wrap: wrap;
+  flex-shrink: 2;
+}
+.flexjs-shrink-3 {
+  flex-wrap: wrap;
+  flex-shrink: 3;
+}
+
+/* FLEX-BASIS */
+.flexjs-basis-auto {
+  flex-basis: auto;
+}
+.flexjs-basis-1 {
+  flex-basis: 115px;
+}
+.flexjs-basis-2 {
+  flex-basis: 130px;
+}
+.flexjs-basis-3 {
+  flex-basis: 75%;
+}
+
+/* ALIGN-SELF */
+.flex-container[data-id="container-align-self"] {
+  display: flex;
+  align-items: center;
+}
+.flex-container[data-id="container-align-self"] > div,
+.flex-container[data-id="container-align-content"] > div,
+.flex-container[data-id="container-order"] > div,
+.flex-container[data-id="container-flex-basis"] > div:nth-of-type(2),
+.flex-container[data-id="container-flex-direction"] > div,
+.flex-container[data-id="container-display"] > div,
+.flex-container[data-id="container-align-items"] > div {
+  flex: 1;
+}
+
+.flex-container[data-id="container-align-self"] > div:first-of-type {
+  height: unset;
+}
+.flex-container[data-id="container-align-items"] > div {
+  height: unset;
+}
+.flexjs-align-auto {
+  align-self: auto;
+}
+.flexjs-align-flex-start {
+  align-self: flex-start;
+}
+.flexjs-align-flex-end {
+  align-self: flex-end;
+}
+.flexjs-align-center {
+  align-self: center;
+}
+.flexjs-align-baseline {
+  align-self: baseline;
+}
+.flexjs-align-stretch {
+  align-self: stretch;
+  transform-origin: 50% 50%;
+}
+
+/* =========================================================
+   MEDIA QUERIES - HOME PAGE 
+   ========================================================= */
+
+@media screen and (min-width: 47em) {
+  .flex-item-1,
+  .flex-item-2,
+  .flex-item-3,
+  .flex-item-4 {
+    width: 100px;
+  }
+  .ac-width {
+    width: 45%;
+    height: unset;
+  }
+
+  .flex-item-shrink {
+    width: 400px;
+  }
+  .container-border {
+    padding: 2.5rem;
+  }
+}
+@media screen and (min-width: 64em) {
+  .flex-item-1,
+  .flex-item-2,
+  .flex-item-3,
+  .flex-item-4 {
+    width: 110px;
+  }
+  .ac-width {
+    width: 45%;
+    height: unset;
+  }
+}
+
+/* ========================================================================
+   CONTACT PAGE 
+   ======================================================================== */
+
+/* FORM */
+form {
+  max-width: 950px;
+  width: 95%;
+  margin: 0 auto;
+  padding: 55px;
+}
+form > div {
+  padding: 12px;
+}
+
+input:not(input[type="range"]),
+textarea {
+  width: 100%;
+  height: fit-content;
+  background-color: #fafafa;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+textarea::placeholder,
+input::placeholder {
+  color: #999;
+  font-size: 1.6rem;
+  padding: 0.2rem;
+}
+
+.form > div > input::placeholder,
+.form > div > input,
+.form > div > textarea::placeholder,
+.form > div > textarea {
+  color: var(--secondary-font-clr);
+  opacity: 1;
+  font-weight: 400;
+  border: none;
+}
+
+.form {
+  display: grid;
+  grid-template-areas:
+    "intro"
+    "name"
+    "email"
+    "message"
+    "submit";
+}
+.form-intro {
+  grid-area: intro;
+}
+.name {
+  grid-area: name;
+}
+.email {
+  grid-area: email;
+}
+.message {
+  grid-area: message;
+}
+.submit {
+  grid-area: submit;
+}
+
+.form-container {
+  background-color: var(--clr-primary);
+  padding: 70px 0;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Form Button */
+.form > .submit > input {
+  background-color: var(--clr-secondary);
+  padding: 0.5rem;
+  border: none;
+  max-width: 200px;
+  cursor: pointer;
+  color: var(--secondary-font-clr);
+  border: 2px solid var(--clr-secondary);
+  font-weight: 400;
+  font-size: 1.9rem;
+}
+.form > .submit > input:focus,
+.form > .submit > input:hover {
+  background-color: var(--clr-primary);
+  color: #fafafa;
+  border: 2px solid #fafafa;
+}
+
+/* =========================================================
+     MEDIA QUERIES - CONTACT PAGE
+     ========================================================= */
+@media (min-width: 47.06em) {
+  /* Form 1 */
+  .form {
+    display: grid;
+    grid-template-areas:
+      "intro intro"
+      "name email"
+      "message message"
+      "submit . ";
+  }
+}

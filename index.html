@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Flexbox-Home</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="page-container">
+      <div class="nav-logo-flex">
+        <img
+          src="./assets/flex-logo.svg"
+          alt="Logo"
+          width="147"
+          height="40"
+          class="flex-logo"
+        />
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <ul class="nav-list">
+            <li><a href="./index.html" class="link-animation">Home</a></li>
+            <li><a href="./about.html" class="link-animation">About</a></li>
+            <li><a href="./contact.html" class="link-animation">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="header-container">
+        <h1 class="ptb-24">
+          Welcome to <span class="highlight">Flexbox</span>
+        </h1>
+      </div>
+    </header>
+    <div class="flex-pattern pb-12">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <main>
+      <!-- INTRODUCTION -->
+      <section class="intro-container page-container pt-8 pb-12">
+        <h2>An introduction to Flexbox</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet soluta
+          voluptas quas deserunt, nemo, nam at, hic iste obcaecati maxime
+          cupiditate molestiae magni! Cum, esse aut accusamus sint quam
+          quisquam!
+        </p>
+      </section>
+
+      <h2 class="page-container pt-12">
+        Flex <span class="highlight">Container</span>
+      </h2>
+
+      <!-- DISPLAY -->
+      <section class="page-container pb-12 pt-4">
+        <div class="section-background">
+          <h3>Display</h3>
+          <p class="pb-3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+            consequatur tenetur repudiandae architecto quasi. Impedit, deserunt
+            soluta dolorem repellat illum eius! Corporis doloremque est
+            molestiae repudiandae nostrum ratione ex odit.
+          </p>
+          <div class="container-border">
+            <div class="flex-container" data-id="container-display">
+              <div class="flex-item-1">Item 1</div>
+              <div class="flex-item-2">Item 2</div>
+              <div class="flex-item-3">Item 3</div>
+              <div class="flex-item-4">Item 4</div>
+            </div>
+            <div class="property-container">
+              <p class="property-style">display:</p>
+              <select
+                class="dropdown"
+                data-id="container-display"
+                data-target="container"
+              >
+                <option value="" disabled selected>Select</option>
+                <option value="display-flex">Flex</option>
+                <option value="display-block">Block</option>
+                <option value="display-inline-flex">Inline Flex</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FLEX DIRECTION -->
+      <section class="page-container ptb-12">
+        <div class="section-background">
+          <h3>Flex Direction</h3>
+          <p class="pb-3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+            consequatur tenetur repudiandae architecto quasi. Impedit, deserunt
+            soluta dolorem repellat illum eius! Corporis doloremque est
+            molestiae repudiandae nostrum ratione ex odit.
+          </p>
+          <div class="container-border">
+            <div class="flex-container" data-id="container-flex-direction">
+              <div class="flex-item-1">Item 1</div>
+              <div class="flex-item-2">Item 2</div>
+              <div class="flex-item-3">Item 3</div>
+              <div class="flex-item-4">Item 4</div>
+            </div>
+            <div class="property-container">
+              <p class="property-style">flex-direction:</p>
+
+              <select
+                class="dropdown"
+                data-id="container-flex-direction"
+                data-target="container"
+              >
+                <option value="" disabled selected>Select</option>
+                <option value="row">row</option>
+                <option value="row-reverse">row-reverse</option>
+                <option value="column">column</option>
+                <option value="column-reverse">column-reverse</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-container ptb-12">
+        <div class="section-background">
+          <h3>Flex Wrap</h3>
+          <p class="pb-3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+            consequatur tenetur repudiandae architecto quasi. Impedit, deserunt
+            soluta dolorem repellat illum eius! Corporis doloremque est
+            molestiae repudiandae nostrum ratione ex odit.
+          </p>
+          <div class="container-border">
+            <div class="flex-container" data-id="container-flex-wrap">
+              <div class="flex-item-1">Item 1</div>
+              <div class="flex-item-2">Item 2</div>
+              <div class="flex-item-3">Item 3</div>
+              <div class="flex-item-4">Item 4</div>
+            </div>
+            <div class="property-container">
+              <p class="property-style">flex-wrap:</p>
+              <select
+                class="dropdown"
+                data-id="container-flex-wrap"
+                data-target="container"
+              >
+                <option value="" disabled selected>Select</option>
+                <option value="nowrap">nowrap</option>
+                <option value="wrap">wrap</option>
+                <option value="wrap-reverse">wrap-reverse</option>
+              </select>
+
+              <div class="slider-container">
+                <label for="width-slider">Adjust container width: </label>
+                <input
+                  type="range"
+                  id="width-slider-wrap"
+                  min="25"
+                  max="100"
+                  value="100"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- JUSTIFY CONTENT -->
+      <section class="page-container ptb-12">
+        <div class="section-background">
+          <h3>Justify Content</h3>
+          <p class="pb-3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+            consequatur tenetur repudiandae architecto quasi. Impedit, deserunt
+            soluta dolorem repellat illum eius! Corporis doloremque est
+            molestiae repudiandae nostrum ratione ex odit.
+          </p>
+          <div class="container-border">
+            <div class="flex-container" data-id="container-justify-content">
+              <div class="flex-item-1">Item 1</div>
+              <div class="flex-item-2">Item 2</div>
+              <div class="flex-item-3">Item 3</div>
+              <div class="flex-item-4">Item 4</div>
+            </div>
+            <div class="property-container">
+              <p class="property-style">justify-content:</p>
+              <select
+                class="dropdown"
+                data-id="container-justify-content"
+                data-target="container"
+              >
+                <option value="" disabled selected>Select</option>
+                <option value="flex-start">flex-start</option>
+                <option value="flex-end">flex-end</option>
+                <option value="center">center</option>
+                <option value="space-between">space-between</option>
+                <option value="space-around">space-around</option>
+                <option value="space-evenly">space-evenly</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ALIGN ITEMS -->
+      <section class="page-container ptb-12">
+        <div class="section-background">
+          <h3>Align Items</h3>
+          <p class="pb-3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+            consequatur tenetur repudiandae architecto quasi. Impedit, deserunt
+            soluta dolorem repellat illum eius! Corporis doloremque est
+            molestiae repudiandae nostrum ratione ex odit.
+          </p>
+          <div class="container-border">
+            <div class="flex-container" data-id="container-align-items">
+              <div class="flex-item-1">Item 1</div>
+              <div class="flex-item-2">Item 2</div>
+              <div class="flex-item-3">Item 3</div>
+              <div class="flex-item-4">Item 4</div>
+            </div>
+            <div class="property-container">
+              <p class="property-style">align-items:</p>
+              <select
+                class="dropdown"
+                data-id="container-align-items"
+                data-target="container"
+              >
+                <option value="" disabled selected>Select</option>
+                <option value="ai-stretch">stretch</option>
+                <option value="ai-flex-start">flex-start</option>
+                <option value="ai-flex-end">flex-end</option>
+                <option value="ai-center">center</option>
+                <option value="ai-baseline">baseline</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ALIGN CONTENT -->
+      <section class="page-container ptb-12">
+        <div class="section-background">
+          <h3>Align Content</h3>
+          <p class="pb-3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+            consequatur tenetur repudiandae architecto quasi. Impedit, deserunt
+            soluta dolorem repellat illum eius! Corporis doloremque est
+            molestiae repudiandae nostrum ratione ex odit.
+          </p>
+          <div class="container-border">
+            <div class="flex-container" data-id="container-align-content">
+              <div class="flex-item-1 ac-width">Item 1</div>
+              <div class="flex-item-2 ac-width">Item 2</div>
+              <div class="flex-item-3 ac-width">Item 3</div>
+              <div class="flex-item-4 ac-width">Item 4</div>
+            </div>
+            <div class="property-container">
+              <p class="property-style">align-content:</p>
+              <select
+                class="dropdown"
+                data-id="container-align-content"
+                data-target="container"
+              >
+                <option value="" disabled selected>Select</option>
+                <option value="ac-stretch">stretch</option>
+                <option value="ac-flex-start">flex-start</option>
+                <option value="ac-flex-end">flex-end</option>
+                <option value="ac-center">center</option>
+                <option value="ac-space-between">space-between</option>
+                <option value="ac-space-around">space-around</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GAP -->
+      <section class="page-container ptb-12">
+        <div class="section-background">
+          <h3>Gap</h3>
+          <p class="pb-3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+            consequatur tenetur repudiandae architecto quasi. Impedit, deserunt
+            soluta dolorem repellat illum eius! Corporis doloremque est
+            molestiae repudiandae nostrum ratione ex odit.
+          </p>
+          <div class="container-border">
+            <div class="flex-container" data-id="container-gap">
+              <div class="flex-item-1">Item 1</div>
+              <div class="flex-item-2">Item 2</div>
+              <div class="flex-item-3">Item 3</div>
+              <div class="flex-item-4">Item 4</div>
+            </div>
+            <div class="property-container">
+              <p class="property-style">gap:</p>
+              <select
+                class="dropdown"
+                data-id="container-gap"
+                data-target="container"
+              >
+                <option value="" disabled selected>Select</option>
+                <option value="gap-0">0</option>
+                <option value="gap-1">0.5rem</option>
+                <option value="gap-2">1rem</option>
+                <option value="gap-3">1.5rem</option>
+                <option value="gap-4">2rem</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <h2 class="page-container">Flex <span class="highlight">Item</span></h2>
+
+      <!-- ORDER -->
+      <section class="page-container ptb-12">
+        <div class="section-background">
+          <h3>Order</h3>
+          <p class="pb-3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+            consequatur tenetur repudiandae architecto quasi. Impedit, deserunt
+            soluta dolorem repellat illum eius! Corporis doloremque est
+            molestiae repudiandae nostrum ratione ex odit.
+          </p>
+          <div class="container-border">
+            <div class="flex-container" data-id="container-order">
+              <div class="flex-item-1">Item 1</div>
+              <div class="flex-item-2">Item 2</div>
+              <div class="flex-item-3">Item 3</div>
+              <div class="flex-item-4">Item 4</div>
+            </div>
+            <div class="property-container">
+              <p class="property-style">order:</p>
+              <select
+                class="dropdown"
+                data-id="container-order"
+                data-target="child"
+              >
+                <option value="" disabled selected>Select</option>
+                <option value="order-1">1</option>
+                <option value="order-2">2</option>
+                <option value="order-3">3</option>
+                <option value="order-4">4</option>
+                <option value="order-5">5</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FLEX GROW -->
+      <section class="page-container ptb-12">
+        <div class="section-background">
+          <h3>Flex Grow</h3>
+          <p class="pb-3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+            consequatur tenetur repudiandae architecto quasi. Impedit, deserunt
+            soluta dolorem repellat illum eius! Corporis doloremque est
+            molestiae repudiandae nostrum ratione ex odit.
+          </p>
+          <div class="container-border">
+            <div class="flex-container" data-id="container-flex-grow">
+              <div class="flex-item-1">Item 1</div>
+              <div class="flex-item-2">Item 2</div>
+              <div class="flex-item-3">Item 3</div>
+              <div class="flex-item-4">Item 4</div>
+            </div>
+            <div class="property-container">
+              <p class="property-style">flex-grow:</p>
+              <select
+                class="dropdown"
+                data-id="container-flex-grow"
+                data-target="child"
+              >
+                <option value="" disabled selected>Select</option>
+                <option value="grow-0">0</option>
+                <option value="grow-1">1</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FLEX SHRINK -->
+      <section class="page-container ptb-12">
+        <div class="section-background">
+          <h3>Flex Shrink</h3>
+          <p class="pb-3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+            consequatur tenetur repudiandae architecto quasi. Impedit, deserunt
+            soluta dolorem repellat illum eius! Corporis doloremque est
+            molestiae repudiandae nostrum ratione ex odit.
+          </p>
+          <div class="container-border">
+            <div class="flex-container" data-id="container-flex-shrink">
+              <div class="flex-item-1 flex-item-shrink">Item 1</div>
+              <div class="flex-item-2">Item 2</div>
+            </div>
+            <div class="property-container">
+              <p class="property-style">flex-shrink:</p>
+              <select
+                class="dropdown"
+                data-id="container-flex-shrink"
+                data-target="child"
+              >
+                <option value="" disabled selected>Select</option>
+                <option value="shrink-1">1</option>
+                <option value="shrink-2">2</option>
+                <option value="shrink-3">3</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FLEX BASIS -->
+      <section class="page-container ptb-12">
+        <div class="section-background">
+          <h3>Flex Basis</h3>
+          <p class="pb-3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+            consequatur tenetur repudiandae architecto quasi. Impedit, deserunt
+            soluta dolorem repellat illum eius! Corporis doloremque est
+            molestiae repudiandae nostrum ratione ex odit.
+          </p>
+          <div class="container-border">
+            <div class="flex-container" data-id="container-flex-basis">
+              <div class="flex-item-1">Item 1</div>
+              <div class="flex-item-2">Item 2</div>
+            </div>
+            <div class="property-container">
+              <p class="property-style">flex-basis:</p>
+              <select
+                class="dropdown"
+                data-id="container-flex-basis"
+                data-target="child"
+              >
+                <option value="" disabled selected>Select</option>
+                <option value="basis-auto">auto</option>
+                <option value="basis-1">75px</option>
+                <option value="basis-2">100px</option>
+                <option value="basis-3">75%</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ALIGN SELF -->
+      <section class="page-container ptb-12">
+        <div class="section-background">
+          <h3>Align Self</h3>
+          <p class="pb-3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+            consequatur tenetur repudiandae architecto quasi. Impedit, deserunt
+            soluta dolorem repellat illum eius! Corporis doloremque est
+            molestiae repudiandae nostrum ratione ex odit.
+          </p>
+          <div class="container-border">
+            <div class="flex-container" data-id="container-align-self">
+              <div class="flex-item-1">Item 1</div>
+              <div class="flex-item-2">Item 2</div>
+              <div class="flex-item-3">Item 3</div>
+              <div class="flex-item-4">Item 4</div>
+            </div>
+            <div class="property-container">
+              <p class="property-style">align-self:</p>
+              <select
+                class="dropdown"
+                data-id="container-align-self"
+                data-target="child"
+              >
+                <option value="" disabled selected>Select</option>
+                <option value="align-auto">auto</option>
+                <option value="align-flex-start">flex-start</option>
+                <option value="align-flex-end">flex-end</option>
+                <option value="align-center">center</option>
+                <option value="align-baseline">baseline</option>
+                <option value="align-stretch">stretch</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="page-container mt-10 ptb-4">
+      <div class="nav-logo-flex">
+        <img
+          src="./assets/flex-logo.svg"
+          alt="Logo"
+          width="147"
+          height="40"
+          class="flex-logo"
+        />
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <ul class="nav-list">
+            <li><a href="./index.html" class="link-animation">Home</a></li>
+            <li><a href="./about.html" class="link-animation">About</a></li>
+            <li><a href="./contact.html" class="link-animation">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="./script.js" async defer></script>
+  </body>
+</html>
